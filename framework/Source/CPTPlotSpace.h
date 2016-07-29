@@ -144,7 +144,9 @@ extern CPTPlotSpaceInfoKey __nonnull const CPTPlotSpaceDisplacementKey;
  *  In either case, the delegate may choose to take extra actions, or handle the event itself.
  **/
 -(BOOL)plotSpace:(nonnull CPTPlotSpace *)space shouldHandlePointingDeviceUpEvent:(nonnull CPTNativeEvent *)event atPoint:(CGPoint)point;
-
+-(BOOL)plotSpace:(nonnull CPTPlotSpace *)space shouldHandlePointingDeviceDownTouch:(nonnull UITouch *)touch atPoint:(CGPoint)point;
+-(BOOL)plotSpace:(nonnull CPTPlotSpace *)space shouldHandlePointingDeviceDraggedTouch:(nonnull UITouch *)event atPoint:(CGPoint)point;
+-(BOOL)plotSpace:(nonnull CPTPlotSpace *)space shouldHandlePointingDeviceUpTouches:(nonnull NSArray<UITouch*> *)touches;
 #if TARGET_OS_SIMULATOR || TARGET_OS_IPHONE
 #else
 
@@ -157,6 +159,7 @@ extern CPTPlotSpaceInfoKey __nonnull const CPTPlotSpaceDisplacementKey;
  *  In either case, the delegate may choose to take extra actions, or handle the event itself.
  **/
 -(BOOL)plotSpace:(nonnull CPTPlotSpace *)space shouldHandleScrollWheelEvent:(nonnull CPTNativeEvent *)event fromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint;
+
 #endif
 
 /// @}
